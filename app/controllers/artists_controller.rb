@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :find_artists
+  before_action :find_artists, only: [:show, :update, :destroy]
 
   def index
     artists = Artist.all
@@ -23,7 +23,7 @@ class ArtistsController < ApplicationController
     else
       render json:{
         message: "Couldn't find record"
-      }, status: :unauthorized
+      }, status: :unprocessable_entity
     end
   end
 
@@ -38,7 +38,7 @@ class ArtistsController < ApplicationController
     else
       render json:{
         message: 'Artists Not Update',
-      }, status: :unauthorized
+      }, status: :unprocessable_entity
     end
   end
 
