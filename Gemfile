@@ -49,3 +49,21 @@ gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt'
 gem 'jsonapi-serializer'
+
+
+group :development, :test do
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
+
+  gem 'factory_bot_rails'
+
+  gem 'faker'
+
+  gem 'rspec-rails', '~> 5.0'
+
+  gem 'rails-controller-testing'
+end
+
+group :test do
+  gem 'shoulda-matchers', '~> 5.0'
+end
