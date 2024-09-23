@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   end
 
   resources :artists
+
+  resources :songs
+
+  resources :wishlists
 end

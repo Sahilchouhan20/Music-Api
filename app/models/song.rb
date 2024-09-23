@@ -1,4 +1,4 @@
 class Song < ApplicationRecord
   belongs_to :artist
-  belongs_to :songs
+  has_many :wishlists
 end

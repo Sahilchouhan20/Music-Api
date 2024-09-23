@@ -2,8 +2,13 @@ class ArtistsController < ApplicationController
   before_action :find_artists
 
   def index
-    @artists = Artist.all
-    render json: { artists: @artists }
+    artists = Artist.all
+    render json: { artists: artists }
+  end
+
+  def show
+    artist = @artists
+    render json: { artist: artist }
   end
 
   def create
