@@ -36,9 +36,7 @@ class ArtistsController < ApplicationController
       }
       }
     else
-      render json:{
-        message: 'Artists Not Update',
-      }, status: :unprocessable_entity
+      render json: @artist.errors, status: :unprocessable_entity
     end
   end
 

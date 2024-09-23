@@ -44,7 +44,7 @@ class WishlistsController < ApplicationController
     else
       render json:{
         message: 'Wishlist Not Update',
-      }, status: :unauthorized
+      }, status: :unprocessable_entity
     end
   end
 
@@ -58,14 +58,14 @@ class WishlistsController < ApplicationController
     else
       render json:{
         message: 'Wishlist Not Delete',
-      }, status: :unauthorized
+      }, status: :unprocessable_entity
     end
   end
 
   private
 
   def wishlist_params
-    params.permit(:song_id)
+    params.permit(:song_id,:title)
   end
 
   def find_wishlist

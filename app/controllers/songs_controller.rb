@@ -28,7 +28,7 @@ class SongsController < ApplicationController
     else
       render json:{
         message: 'Song not created',
-      }, status: :unauthorized
+      }, status: :unprocessable_entity
     end
   end
 
